@@ -19,7 +19,7 @@ def correct():
     data = request.json
     text = data['text']
     result = model.generate_content(f"Correct the following text: {text}")
-    return result.text
+    return jsonify({"text": result.text})
 
 if __name__ == '__main__':
     app.run(port=5000) 
